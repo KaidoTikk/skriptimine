@@ -2,10 +2,18 @@
 #
 # kella ja kuupaeva valjastamine
 #
+# paev
+paev=$(date +"%A, %B %d, %Y")
 # defineerimine kella muutuja
-kell=$(date +"%H.%M")
+kell=$(date +"%H:%M")
 # defineerimine kuupaeva muutuja
-kuupaev=$(date +"%d.%m.%Y")
+kuu=$(date +"%B &Y")
 #trukime sisu valja koos selgitava tekstiga
-echo "Kell on $kell"
-echo "Kuupaev on $kuupaev"
+echo "Today is $paev"
+echo "Time is $kell"
+echo "Calder of $kuu"
+echo "=============="
+# kalendri muutuja
+cal | tail -n 7
+echo 
+echo "=============="
