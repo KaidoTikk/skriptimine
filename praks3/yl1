@@ -7,7 +7,7 @@ paev=$(date +"%A, %B %d, %Y")
 # defineerimine kella muutuja
 kell=$(date +"%H:%M")
 # defineerimine kuupaeva muutuja
-kuu=$(date +"%B &Y")
+kuu=$(date +"%B %Y")
 #trukime sisu valja koos selgitava tekstiga
 echo "Today is $paev"
 echo "Time is $kell"
@@ -15,5 +15,4 @@ echo "Calder of $kuu"
 echo "=============="
 # kalendri muutuja
 cal | tail -n 7
-echo 
 echo "=============="
