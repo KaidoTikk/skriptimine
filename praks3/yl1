@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# kella ja kuupaeva valjastamine
+#
+# defineerimine kella muutuja
+kell=$(date +"%H.%M")
+# defineerimine kuupaeva muutuja
+kuupaev=$(date +"%d.%m.%Y")
+#trukime sisu valja koos selgitava tekstiga
+echo "Kell on $kell"
+echo "Kuupaev on $kuupaev"
