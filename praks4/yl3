@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Kolmnruga pindala arvutamine Heroni valemi järgi
+#
+#
+# vaartused sisestatakse kasurealt
+a=$1
+b=$2
+c=$3
+# arvutused
+# p = (a + b + c)/2
+p=$(echo "scale=2;($a + $b + $c)/2" | bc)
+# s = sqrt(p(p -a)(p -b)(p-c))
+s=$(echo "scale=2;sqrt($p * ($p - $a) * ($p - $b) * ($p - $c))" | bc)
+echo "pindala = $s"
+
