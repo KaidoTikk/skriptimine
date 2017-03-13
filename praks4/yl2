@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+#
+echo -n "siseta a kulje vaartus: "
+read a
+echo -n "siseta b kulje vaartus: "
+read b
+echo -n "siseta c kulje vaartus: "
+read c
+# arvutused
+# p = (a + b + c)/2
+p=$(echo "scale=2;($a + $b + $c)/2" | bc)
+# s = sqrt(p(p -a)(p -b)(p-c))
+s=$(echo "scale=2;sqrt($p * ($p - $a) * ($p - $b) * ($p - $c))" | bc)
+echo "pindala = $s"
+
