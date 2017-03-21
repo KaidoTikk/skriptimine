@@ -10,7 +10,7 @@ read m
 echo -n "Sisesta pikkus (m): "
 read h
 #Kontrollime, kas sisestatud väärtustatud
-if [ -n $m ] || [ -n $h ]; then
+if [ -n "$m" ] && [ -n "$h" ]; then
 #Arvutame oma kehamassi indeksi
 # i = m / h^2
 i=$(echo "scale=2;$m/$h^2" | bc)
@@ -42,4 +42,6 @@ else
 # väljastamine
 echo "Probleem skripti kasutamisega"
 fi
+else
+echo "mass ja pikkus peavad olema väärtustatud"
 fi
