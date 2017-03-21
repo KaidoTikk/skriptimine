@@ -1,4 +1,45 @@
 #!/bin/bash
 #
+#Andmed
 #
 #
+echo -n "Sisesta eesnimi ja perenimi: "
+read eesnimi perenimi
+echo -n "Sisesta kaal (kg): "
+read m
+echo -n "Sisesta pikkus (m): "
+read h
+#Kontrollime, kas sisestatud väärtustatud
+if [ -n $m ] || [ -n $h ]; then
+#Arvutame oma kehamassi indeksi
+# i = m / h^2
+i=$(echo "scale=2;$m/$h^2" | bc)
+#Kasutaja andmed
+echo "Tere $eesnimi $perenimi, "
+echo "Teie kehamassiineks on $i"
+#Erinevalt väljastamine
+alakaal_t=$(echo "$i < 19" | bc)
+normaal_t=$(echo "$i >= 19 && $i < 25" | bc)
+ulekaal_t=$(echo "$i >= 25 && $i < 30" | bc)
+rasvumine_t=$(echo "$i >=30" | bc)
+#Alakaal
+if [ $alakaal_t -eq 1 ]; then
+echo "Alakaal"
+echo "Alakaal on tervisele ohtlik."
+#normaal kaal
+elif [ $normaal_t -eq 1 ]; then
+echo "Normaalkaal"
+echo "Oled tubli toitud  vastavalt vajadusele"
+#Ülekaal
+elif [ $ulekaal_t -eq 1 ]; then
+echo "Ulekaal"
+echo "Vota kaalust alla" 
+#Rasvumine
+elif [ $rasvumine_t -eq 1 ]; then
+echo "Rasvunud"
+echo "Tee trenni"
+else
+# väljastamine
+echo "Probleem skripti kasutamisega"
+fi
+fi
