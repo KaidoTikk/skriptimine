@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+#Andmed
+#
+#
+echo -n "Sisesta eesnimi ja perenimi: "
+read eesnimi perenimi
+echo -n "Sisesta kaal (kg): "
+read m
+echo -n "Sisesta pikkus (m): "
+read h
+#Arvutame oma kehamassi indeksi
+# i = m / h^2
+i=$(echo "scale=2;$m/$h^2" | bc)
+# väljastamine
+echo "Lugupeetud $eesnimi $perenimi,"
+echo "Teie kehamassi indeks on $i"
