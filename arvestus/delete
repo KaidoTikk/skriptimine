@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+#Kaido Tikk
+#Delete skriptiga on tegu
+#Kontrollida faili olemas olu ning kustutab selle
+echo -n "Sisesta fail mida soovite kustutada: "
+read delete
+if [ ! -f $delete ]
+then
+echo "Sisestatud faili pole"
+else
+echo "Fail olemas"
+echo "Fail: $delete kustutamine"
+fi
+rm -rf $delete
+echo -n "Failid mis on kaustas: "
+ls
