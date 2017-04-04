@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+#info skript
+#
+#Kaido Tikk
+#Info skriptiga on tegu
+#Skripti ülesanne on väljastada kuupäev, kella aja ja kuu kalendri
+#
+#echo Kasutaja tervitamine
+echo "Tere, `whoami`!"
+# ENTER klahvi ütlemise käsk
+echo -n "Skripti jätkamiseks vajuta ENTER klahvi"
+read a
+# Kuupäeva, kella aja ja kalendri näitamine
+paev=$(date +"%d.%m.%Y")
+kell=$(date +"%H:%M")
+echo "Täna on $paev kell $kell"
+cal
+#
+# skripti lõpp
