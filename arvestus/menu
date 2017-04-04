@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+#Kaido Tikk
+#Menu skript
+#Peab väljastama vastavalt numbrile sisestatud menu
+cat -n menu1 menu2 menu3
+echo -n "Please give a number (1 or 2 or 3) :"
+read n
+if [ $n -eq 1 ]; then
+echo "Stick to your ribs."
+echo "Enjoy your meal!"
+elif [ $n -eq 2 ]; then
+echo "British are coming!"
+echo "Enjoy your meal!"
+elif [ $n -eq 3 ]; then
+echo "Health foods."
+echo "Enjoy your meal!"
+else [ -z $n ];
+echo "Tehke oma valik"
+fi
+
